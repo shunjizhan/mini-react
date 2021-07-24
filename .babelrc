@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        // instead of compiling to `React.createElement`
+        "pragma": "TinyReact.createElement"
+      }
+    ]
+  ]
+}
