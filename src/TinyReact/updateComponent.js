@@ -1,4 +1,4 @@
-import diff from "./diff"
+import diff from './diff';
 
 export default function updateComponent(
   VDOM,
@@ -6,16 +6,16 @@ export default function updateComponent(
   oldDOM,
   container
 ) {
-  oldComponent.componentWillReceiveProps(VDOM.props)
+  oldComponent.componentWillReceiveProps(VDOM.props);
   if (oldComponent.shouldComponentUpdate(VDOM.props)) {
-    let prevProps = oldComponent.props
+    let prevProps = oldComponent.props;
 
-    oldComponent.componentWillUpdate(VDOM.props)
-    oldComponent.updateProps(VDOM.props)
-    let nextVDOM = oldComponent.render()
-    nextVDOM.component = oldComponent
+    oldComponent.componentWillUpdate(VDOM.props);
+    oldComponent.updateProps(VDOM.props);
+    let nextVDOM = oldComponent.render();
+    nextVDOM.component = oldComponent;
 
-    diff(nextVDOM, container, oldDOM)
-    oldComponent.componentDidUpdate(prevProps)
+    diff(nextVDOM, container, oldDOM);
+    oldComponent.componentDidUpdate(prevProps);
   }
 }

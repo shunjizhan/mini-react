@@ -1,31 +1,31 @@
-import diff from "./diff"
+import diff from './diff';
 
 export default class Component {
   constructor(props) {
     // 所以子类必须要super(props),不然拿不到props
-    this.props = props
+    this.props = props;
   }
 
   setState(state) {
-    this.state = Object.assign({}, this.state, state)
+    this.state = Object.assign({}, this.state, state);
 
-    let newVDOM = this.render()     // 最新的要渲染的 newVDOM 对象
-    let oldDOM = this.getDOM()      // 旧的 virtualDOM 对象 进行比对
-    let container = oldDOM.parentNode
+    let newVDOM = this.render();     // 最新的要渲染的 newVDOM 对象
+    let oldDOM = this.getDOM();      // 旧的 virtualDOM 对象 进行比对
+    let container = oldDOM.parentNode;
 
-    diff(newVDOM, container, oldDOM)
+    diff(newVDOM, container, oldDOM);
   }
 
   setDOM(dom) {
-    this._dom = dom
+    this._dom = dom;
   }
 
   getDOM() {
-    return this._dom
+    return this._dom;
   }
 
   updateProps(props) {
-    this.props = props
+    this.props = props;
   }
 
   // 生命周期函数
@@ -33,7 +33,7 @@ export default class Component {
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {}
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps != this.props || nextState != this.state
+    return nextProps != this.props || nextState != this.state;
   }
   componentWillUpdate(nextProps, nextState) {}
   componentDidUpdate(prevProps, preState) {}
