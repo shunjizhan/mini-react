@@ -1,6 +1,6 @@
 import mountNativeElement from './mountNativeElement';
-import isFunction from './isFunction';
 import mountComponent from './mountComponent';
+import { isFunction } from './utils';
 
 export default function mountElement(virtualDOM, container, oldDOM, remove=true) {
   if (isFunction(virtualDOM)) {

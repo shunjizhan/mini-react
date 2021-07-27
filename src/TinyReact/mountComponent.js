@@ -1,6 +1,5 @@
-import isFunctionComponent from './isFunctionComponent';
 import mountNativeElement from './mountNativeElement';
-import isFunction from './isFunction';
+import { isFunction, isFunctionComponent } from './utils';
 
 export default function mountComponent(virtualDOM, container, oldDOM) {
   let nextVirtualDOM = null;
